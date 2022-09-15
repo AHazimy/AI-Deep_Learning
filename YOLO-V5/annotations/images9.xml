@@ -1,0 +1,26 @@
+<annotation>
+	<folder>annotations</folder>
+	<filename>images9.jpg</filename>
+	<path>C:\Users\Unkown\Desktop\AI_Projects\Twitts_classification\YOLO-V5\annotations\images9.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>567</width>
+		<height>304</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>63</xmin>
+			<ymin>78</ymin>
+			<xmax>480</xmax>
+			<ymax>282</ymax>
+		</bndbox>
+	</object>
+</annotation>
