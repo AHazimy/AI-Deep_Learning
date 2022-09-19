@@ -31,7 +31,7 @@ import librosa.display
 
 #############################################
 # Load an example with vocals.
-y, sr = librosa.load('test.mp3', duration=120)
+y, sr = librosa.load('mixaudio3.wav', duration=120)
 
 
 # And compute the spectrogram magnitude and phase
