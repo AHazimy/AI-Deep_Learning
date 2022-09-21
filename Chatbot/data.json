@@ -1,0 +1,33 @@
+{
+    "intents": [{
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hey",
+                "How are you",
+                "Is anyone there?",
+                "Hello",
+                "Good day"
+            ],
+            "responses": [
+                "Hey :-)",
+                "Hello, thanks for visiting",
+                "Hi there, what can I do for you?",
+                "Hi there, how can I help?"
+            ]
+        },
+        {
+            "tag": "buy",
+            "patterns": [
+                "This item is available?",
+                "Can I take this?",
+                "How to buy it?"
+            ],
+            "responses": [
+                "This item is so beautiful",
+                "Yes, we will tell you"
+            ]
+        }
+
+    ]
+}
