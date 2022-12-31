@@ -16,17 +16,24 @@ except OSError:
 data_path = './db_train_real/'
 videos = os.listdir(data_path)
 
+client_label = ""
+count = 0
+
 for video in videos:
     
-	client_label = f'data/train/{video.split("_")[0]}'
+	client_label_temp = f'data/train/{video.split("_")[0]}'
+	
+	if client_label_temp != client_label:
+		count = 0
+    
+	client_label = client_label_temp
     
 	if not os.path.exists(client_label):
 		os.makedirs(client_label)
 
 	cam = cv2.VideoCapture(os.path.join(data_path,video))
 
-
-	count = 0
+	
 
 	while(True):
 	
@@ -40,7 +47,8 @@ for video in videos:
 				file_name_path = f'{os.path.join(client_label, str(count))}.jpg'
 				cv2.imwrite(file_name_path, face)
 				cv2.putText(face, str(count), (50,50), cv2.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 2)
-				cv2.imshow('Face Cropper', face)
+				# cv2.imshow('Face Cropper', face)
+				print(f"Image {count} for the client {client_label}")
     
 			else:
 				print("Face not found")
@@ -48,6 +56,9 @@ for video in videos:
 		else:
 			cam.release()
 			cv2.destroyAllWindows()
+			break
+
+
 
 
 
