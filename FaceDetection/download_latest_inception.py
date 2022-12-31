@@ -1,3 +1,20 @@
-from keras.applications.inception_v3 import InceptionV3
+import cv2
+import numpy as np
 
-inc = InceptionV3(input_shape=(224,224,3), weights='imagenet', include_top=False)
+#Load face classifier in cv2
+face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.sml')
+
+def face_extractor(img):
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = face_classifier.detectMultiScale(gray, 1.3, 5)
+    
+    if len(faces) == 0:
+        return None
+    
+    for (x,y,w,h) in faces:
+        cropped_face = img[y:y+h, x:x+w]
+        
+    return cropped_face
+
+cap = cv2.VideoCapture(0)
+count = 0
